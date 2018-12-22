@@ -7,4 +7,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public interface PostRepository extends CrudRepository<Post, Long> {
 
+    Iterable<Post> findByUserId(Long userId);
 }

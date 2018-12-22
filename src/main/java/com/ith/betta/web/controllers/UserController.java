@@ -2,6 +2,7 @@ package com.ith.betta.web.controllers;
 
 import com.ith.betta.web.models.User;
 import com.ith.betta.web.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -13,11 +14,8 @@ import java.util.Optional;
 @RestController
 public class UserController {
 
-    private final UserRepository userRepository;
-
-    UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping(value = "/users")
     public Iterable<User> index() {
