@@ -1,12 +1,15 @@
 package com.ith.betta.web.config;
 
+import org.springframework.context.MessageSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses(){
-        return new Class[] {WebMvcConfig.class, JPAConfig.class, RepositoryConfig.class};
+        return new Class[] {WebMvcConfig.class, SecurityConfig.class, JPAConfig.class, RepositoryConfig.class};
     }
 
     @Override
